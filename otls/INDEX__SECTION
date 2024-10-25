@@ -1,0 +1,14 @@
+Operator:     rollback_prim_versions::1.0
+Label:        Rollback Prim Versions
+Path:         oplib:/Lop/rollback_prim_versions::1.0?Lop/rollback_prim_versions::1.0
+Icon:         opdef:/Lop/rollback_prim_versions::1.0?IconSVG
+Table:        Lop
+License:      
+Extra:        
+User:         
+Inputs:       1 to 1
+Subnet:       false
+Python:       true
+Empty:        false
+Modified:     Mon Jul  1 21:52:49 2024
+

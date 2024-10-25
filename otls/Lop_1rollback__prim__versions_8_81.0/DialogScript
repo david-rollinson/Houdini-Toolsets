@@ -1,0 +1,40 @@
+# Dialog script for rollback_prim_versions::1.0 automatically generated
+
+{
+    name	rollback_prim_versions::1.0
+    script	dcreu::dev::rollback_prim_versions::1.0
+    label	"Rollback Prim Versions"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Stage"
+
+    parm {
+        name    "primpattern"
+        label   "Parent Prim to Evaluate"
+        type    string
+        default { "`lopinputprims('.', 0)`" }
+        help    "None"
+        hidewhen "{ createprims == on }"
+        menutoggle {
+            [ "import loputils" ]
+            [ "return loputils.createPrimPatternMenu(kwargs['node'], 0)" ]
+            language python
+        }
+        parmtag { "script_action" "import loputils\nloputils.selectPrimsInParm(kwargs, True)" }
+        parmtag { "script_action_help" "Select primitives in the Scene Viewer or Scene Graph Tree pane. Ctrl-click to select using the primitive picker dialog." }
+        parmtag { "script_action_icon" "BUTTONS_reselect" }
+        parmtag { "sidefx::usdpathtype" "primlist" }
+        parmtag { "spare_category" "USD Prims" }
+    }
+    parm {
+        name    "subtractversion"
+        label   "Subtract Version Number from All Children"
+        type    integer
+        default { "0" }
+        range   { 0 10 }
+        parmtag { "script_callback_language" "python" }
+    }
+}
